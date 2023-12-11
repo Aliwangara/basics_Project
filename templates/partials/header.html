@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-info sticky-top">
+    <div class="container ">
+        <a class="navbar-brand " href="{% url 'home' %}">Spreading Smiles Ke</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navmenu">
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0  ">
+
+                <li class="nav-item">
+                    <a class="nav-link  {% if '/== request.path' %}active{% endif %} " href="{%  url 'home' %}">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link   {% if '/About== request.path' %}active{% endif %}" href="{% url 'about' %}" > About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link  {% if '/volunteers== request.path' %}active{% endif %}" href="{% url 'all' %}">volunteers</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link  {% if '/Our Work== request.path' %}active{% endif %}" href="#">Our Work</a>
+                </li>
+
+                <li class="nav-item">
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link  {% if '/Donate== request.path' %}active{% endif %}" href="{% url 'donate' %}"> Donate</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link  {% if '/Contact Us== request.path' %}active{% endif %}" href="{% url 'contact' %}">Contact Us</a>
+                </li>
+
+            </ul>
+         <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">{{ user.first_name }}</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'signout' %}">Sign Out</a></li>
+
+                    </ul>
+           </ul>
+
+        </div>
+    </div>
+</nav>

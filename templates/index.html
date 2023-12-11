@@ -1,0 +1,264 @@
+{% extends 'layouts/master.html' %}
+{% load static %}
+{% block content %}
+<!-- start of header -->
+<header class="py-20 bg-bg-3">
+
+    <div class="container bg-">
+        <div class="row align-items-center flex-md-row-reverse">
+            <div>
+                <h1 class="text-center text-info">Welcome {{ Name }}, you are {{ Age }} years old </h1>
+            </div>
+            <div class="col-md-6" id="logo">
+                <img src="{% static 'main_assets/images/header_img.png' %} " srcset="i/header-1@2x.png 2x" alt=""
+                     class="w-100" data-aos="fade-down" data-aos-delay="0">
+            </div>
+
+            <div class="col-md-6 mt-8 mt-md-0">
+                <h1 class="display-3 mb-6  text-info " data-aos="fade-down" data-aos-delay="150">
+                    A Heart with A Helping Hand
+                </h1>
+                <p class="mb-8 fs-3" data-aos="fade-down" data-aos-delay="250">
+                    God says. Feed the Hungry, clothe the needy, Be merciful to the orphans, forgive those who have
+                    mistreated you and be good to your parents.
+                    Our aim as an organization is to bring smiles to the Hopeless.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+ </header>
+<!-- end of header -->
+
+<!-- start of section -->
+
+<section class="py-10 py-lg-20 text-center bg-bg-3" id="first">
+    <div class="container">
+        <div class="row">
+            <div class="mb-8  mb-lg-0 col-lg-4 d-flex" data-aos="fade-down" data-aos-delay="0">
+                <div class="w-100 px-4 py-12 bg-bg-2">
+                    <h2 class="fs-3 mt-5 mb-4 ">
+                        EDUCATION
+                    </h2>
+                    <p class="mb-0 mt-5 remove-br-lg">
+                        Lorem ipsum dolor sit amet.
+                        <br>Lorem ipsum, dolor sit amet consectetur adipisicing.
+                    </p>
+                </div>
+            </div>
+            <div class="mb-8 mb-lg-0 col-lg-4 d-flex" data-aos="fade-down" data-aos-delay="150">
+                <div class="w-100 px-4 py-12 bg-bg-2">
+                    <h2 class="fs-3 mt-5 mb-4">
+                        DONATIONS
+                    </h2>
+                    <p class="mb-0 remove-br-lg">
+                        Lorem ipsum dolor sit amet consectetur.
+                        <br>Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 d-flex" data-aos="fade-down" data-aos-delay="250">
+                <div class="w-100 px-4 py-12 bg-bg-2">
+                    <h2 class="fs-3 mt-5 mb-4">
+                        FOOD
+                    </h2>
+                    <p class="mb-0 remove-br-lg">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br>Lorem ipsum dolor sit amet consectetur adipisicing.
+                    <hr>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Images section -->
+<section>
+    <div class=" max-width ms-2 ">
+
+        <H2 class="text-info text-center mt-5 mb-5 text-capitalize  ">IMAGES OF OUR PAST DONATIONS</H2>
+        <div class="row ms-auto">
+
+            <div class=" mb-2 col-sm-9 col-md-6 col-lg-5 ">
+                <a href="#">
+                    <img class="d-md-block d-lg-flex img-fluid w-lg-100 w-sm-100 align-items-center justify-content-between"
+                         src="{% static 'main_assets/images/BOK.jpeg' %}" alt="">
+                </a>
+            </div>
+
+            <div class="mb-2 col-sm-9 col-md-6 col-lg-5 ">
+                <a href="#">
+                    <img class="d-md-block d-lg-flex img-fluid w-lg-100 align-items-center justify-content-between"
+                         src="{% static 'main_assets/images/BOK3.jpg' %}" alt="">
+                </a>
+            </div>
+
+            <div class=" d-md-block d-lg-flex mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="img-fluid w-lg-100 align-items-center justify-content-between"
+                         src="{% static 'main_assets/images/BOK4.jpg' %}" alt="">
+                </a>
+            </div>
+
+            <div class="d-md-block d-lg-flex d-md-block mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="img-fluid w-100 align-items-center justify-content-between"
+                         src="{% static 'main_assets/images/BOK5.jpg' %}" alt="">
+                </a>
+            </div>
+            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quia, accusamus ducimus officia libero
+                delectus dicta tempore natus sequi similique qui! Inventore veniam quisquam corporis nostrum cupiditate.
+                Ipsa, incidunt cumque.</p>
+            <h2>HOW TO HELP THE CHILDREN</h2>
+
+            <a href="#" target="_blank">
+                <button class="btn btn-info  w-sm-25 w-50  d-block text-center mb-5">
+                    FUNDRAISE NOW
+                </button>
+            </a>
+            <hr>
+
+
+        </div>
+        <!-- second images  -->
+
+        <div class="row ms-auto">
+
+            <div class=" mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="d-md-block d-flex flex-wrap img-fluid w-lg-100 align-items-center "
+                         src="{% static 'main_assets/images/Graduation.jpeg' %}" alt="">
+                </a>
+            </div>
+
+            <div class=" mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="d-md-block d-flex flex-wrap img-fluid w-100 align-items-center"
+                         src="{% static 'main_assets/images/Graduation2.jpeg' %}" alt="">
+                </a>
+            </div>
+
+            <div class=" mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="d-md-block d-sm-block d-flex flex-wrap img-fluid w-100 align-items-center"
+                         src="{% static 'main_assets/images/Graduation3copy.jpeg' %}" alt="">
+                </a>
+            </div>
+
+            <div class=" mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="d-md-block d-sm-block d-flex flex-wrap img-fluid w-100 align-items-center"
+                         src="{% static 'main_assets/images/graduation7.jpeg' %}" alt="">
+                </a>
+            </div>
+
+            <div class=" mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="d-md-block d-sm-block d-flex flex-wrap img-fluid w-100 align-items-center"
+                         src="{% static 'main_assets/images/Graduation4.jpeg' %}" alt="">
+                </a>
+            </div>
+
+            <div class=" mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="d-md-block d-sm-block d-flex flex-wrap img-fluid w-100 align-items-center"
+                         src="{% static 'main_assets/images/graduation5.jpeg' %}" alt="">
+                </a>
+            </div>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, consequatur.</p>
+            <a href="">
+                <button class="btn btn-info d-block mb-5 w-sm-25 w-50  btn-lg">
+                    LEARN MORE
+                </button>
+            </a>
+
+            <hr>
+
+
+        </div>
+        <!-- End of secong images -->
+
+        <!-- Third Images -->
+        <div class="row ms-auto">
+
+            <div class=" mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="d-md-block d-sm-block d-flex flex-wrap img-fluid w-100 align-items-center"
+                         src="{% static 'main_assets/images/first donation.jpg' %}" alt="">
+                </a>
+            </div>
+
+            <div class=" mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="d-md-block d-sm-block d-flex flex-wrap img-fluid w-100 align-items-center"
+                         src="{% static 'main_assets/images/matungu food.jpg' %}" alt="">
+                </a>
+            </div>
+
+            <div class=" mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="d-md-block d-sm-block d-flex flex-wrap img-fluid w-100 align-items-center"
+                         src="{% static 'main_assets/images/Matungu1.jpg' %}" alt="">
+                </a>
+            </div>
+
+            <div class=" mb-2 col-sm-9 col-md-6 col-lg-5">
+                <a href="#">
+                    <img class="d-md-block d-sm-block d-flex flex-wrap img-fluid w-100 align-items-center"
+                         src="{% static 'main_assets/images/Matungu2.jpg' %}" alt="">
+                </a>
+            </div>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit repudiandae vitae cum maxime, et
+                aperiam?</p>
+            <a href="#">
+                <button class="btn btn-info w-50 w-sm-25 d-block mb-5 btn-lg">DONATE</button>
+            </a>
+        </div>
+
+
+    </div>
+
+    <!-- End of third images -->
+</section>
+
+<!-- News letters-->
+<section>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center mb-4">
+                Comments
+
+            </h1>
+            <!-- start of form -->
+
+            <form action="" class="bg-info">
+                <div class="text-center col-lg-8 col-md-8 col-sm-9">
+                    <label for="Email" class="form-label">Email:</label>
+                    <input type="Email" class="form-control" id="email" placeholder="Enter Email" name="email">
+                </div>
+
+                <div class="text-center mt-4 mb-4 col-lg-8 col-md-8 col-sm-9">
+                    <label for="comment">Comments:</label>
+                    <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                </div>
+                <a href="">
+                    <button class="w-sm-25 w-25 btn-lg bg-dark text-white mb-2">
+                        Send
+                    </button>
+                </a>
+            </form>
+            <!-- End of form -->
+<script src="{% static 'main_assets/js/script.js' %}"></script>
+
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+<!-- start footer -->
