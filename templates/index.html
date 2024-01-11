@@ -7,7 +7,8 @@
     <div class="container bg-">
         <div class="row align-items-center flex-md-row-reverse">
             <div>
-                <h1 class="text-center text-info">Welcome {{ Name }}, you are {{ Age }} years old </h1>
+                <h1 class="text-center text-info">Welcome </h1>
+                <hr>
             </div>
             <div class="col-md-6" id="logo">
                 <img src="{% static 'main_assets/images/header_img.png' %} " srcset="i/header-1@2x.png 2x" alt=""
@@ -44,6 +45,7 @@
                     <p class="mb-0 mt-5 remove-br-lg">
                         Lorem ipsum dolor sit amet.
                         <br>Lorem ipsum, dolor sit amet consectetur adipisicing.
+                    <hr >
                     </p>
                 </div>
             </div>
@@ -53,8 +55,10 @@
                         DONATIONS
                     </h2>
                     <p class="mb-0 remove-br-lg">
-                        Lorem ipsum dolor sit amet consectetur.
-                        <br>Lorem ipsum dolor sit amet consectetur.
+                         Lorem ipsum dolor sit amet.
+                        <br>Lorem ipsum, dolor sit amet consectetur adipisicing.
+
+                    <hr >
                     </p>
                 </div>
             </div>
@@ -80,6 +84,7 @@
     <div class=" max-width ms-2 ">
 
         <H2 class="text-info text-center mt-5 mb-5 text-capitalize  ">IMAGES OF OUR PAST DONATIONS</H2>
+        <hr>
         <div class="row ms-auto">
 
             <div class=" mb-2 col-sm-9 col-md-6 col-lg-5 ">
@@ -114,7 +119,7 @@
                 Ipsa, incidunt cumque.</p>
             <h2>HOW TO HELP THE CHILDREN</h2>
 
-            <a href="#" target="_blank">
+            <a href="{% url 'donate'  %}" target="_blank">
                 <button class="btn btn-info  w-sm-25 w-50  d-block text-center mb-5">
                     FUNDRAISE NOW
                 </button>
@@ -142,7 +147,7 @@
             </div>
 
             <div class=" mb-2 col-sm-9 col-md-6 col-lg-5">
-                <a href="#">
+                <a href="">
                     <img class="d-md-block d-sm-block d-flex flex-wrap img-fluid w-100 align-items-center"
                          src="{% static 'main_assets/images/Graduation3copy.jpeg' %}" alt="">
                 </a>
@@ -215,7 +220,7 @@
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit repudiandae vitae cum maxime, et
                 aperiam?</p>
-            <a href="#">
+            <a href="{% url 'donate' %}">
                 <button class="btn btn-info w-50 w-sm-25 d-block mb-5 btn-lg">DONATE</button>
             </a>
         </div>
