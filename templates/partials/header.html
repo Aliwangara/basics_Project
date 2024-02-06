@@ -44,6 +44,12 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">{{ user.first_name }}</a>
                     <ul class="dropdown-menu">
                         {% if not request.user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="signin">LogIn</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/signup">Signup</a></li>
+
+
                             {% else %}
                                 <li><a class="dropdown-item" href="{% url 'signout' %}">Sign Out</a></li>
                         {% endif %}
