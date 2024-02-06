@@ -1,20 +1,85 @@
-{% extends 'base_template.html' %}
-{% load crispy_forms_filters %}
-{% block title %}
-    Sign In
-{% endblock %}
-{% block content %}
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <form action="{% url 'signin' %}" method="post" enctype="multipart/form-data" class="shadow py-3  px-2 mt-3">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <button class="btn btn-dark rounded-0 w-50">
-                        Sign In
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+	<section >
+		<div class="container shadow p-5 p-lg-5 rounded w-100 justify-content-center   ">
+			<div class="row ">
+				<div class="col-lg-5 col-md-7 col-sm-9 m-auto">
+					<h1 class="mb-6 mt-4 text-center" data-aos="fade-down" data-aos-delay="0">
+                    LOGIN
+					</h1>
+					<form action="/signin" method="post">
+                        {% csrf_token %}
+
+					<a href=""><img src="/assets/spreading smiles images/header img.jpg" alt="" class="w-100 flex-md-row-reverse mb-2"></a>
+
+
+
+
+
+								<div class="input-group mb-3" data-aos="fade-down" data-aos-delay="150">
+
+									<input type="email" name="email" placeholder="Email address" class="form-control  border-dark-3 ps-5"  required="required">
+								</div>
+								<div class="input-group mb-6 " data-aos="fade-down" data-aos-delay="250">
+
+									<input type="password" name="pass1" placeholder="Password" class="form-control  border-dark-3 ps-5" required="required">
+								</div>
+								<button class="btn btn-action-1 w-100 mb-6 mt-3 bg-dark text-white" data-aos="fade-down" data-aos-delay="400">
+						           Log In
+								</button>
+								<div data-aos="fade-down" data-aos-delay="250">
+									<p class="d-inline-block text-dark-3 mb-6">
+		                              Don’t have an account?
+									</p>
+									<a href="signup" class="ms-1">
+	                                  Sign Up
+									</a>
+								</div>
+								<div class="w-50 border-bottom border-bg-2 mx-auto mb-6" data-aos="fade-down" data-aos-delay="400">
+								</div>
+								<p class="mb-6">
+		                          Sign In via socials
+								</p>
+								<div class="row g-0">
+									<div class="col-4 pe-2">
+										<a href="#" class="btn btn-bg-2 w-100 h-100 d-flex justify-content-center align-items-center">
+
+												<img src="/assets/profiles/facebook.png" alt="">
+
+										</a>
+									</div>
+									<div class="col-4 px-1">
+										<a href="#" class="btn btn-bg-2 w-100 h-100 d-flex justify-content-center align-items-center">
+
+												<img src="/assets/profiles/instagram (3).png" alt="">
+
+										</a>
+									</div>
+
+									<div class="col-4 px-1">
+										<a href="" class="btn btn-bg-2 w-100 h-100 d-flex justify-content-center align-items-center">
+												<img src="/assets/profiles/whatsapp.png" alt="">
+
+										</a>
+									</div>
+
+
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+
+</body>
+
+</html>

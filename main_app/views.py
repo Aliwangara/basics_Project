@@ -3,15 +3,15 @@ from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
-
-from main_app.app_forms import Employee_form, LoginForm
+from _ast import Pass
+from main_app.app_forms import Employee_form
 from main_app.models import Employee
 from main_app.users import people
-
-
+from  django.template import  RequestContext
 
 
 # Create your views here.
@@ -42,6 +42,7 @@ def home_page(request):
 def about(request):
     return render(request, "about.html")
 
+
 @login_required
 def donate(request):
     return render(request, "charity.html")
@@ -49,6 +50,7 @@ def donate(request):
 
 def contact(request):
     return render(request, "contact.html")
+
 
 @login_required
 @permission_required('main_app.add_employee', raise_exception=True)
@@ -88,6 +90,7 @@ def employee_details(request, emp_id):
     employee = Employee.objects.get(pk=emp_id)  # SELECT * FROM employees
     return render(request, 'employee_details.html', {"employee": employee})
 
+
 @login_required
 @permission_required('main_app.delete_employee')
 def employee_delete(request, emp_id):
@@ -95,6 +98,7 @@ def employee_delete(request, emp_id):
     employee.delete()
     messages.warning(request, 'Deleted successfully')
     return redirect("all")
+
 
 @login_required
 @permission_required('main_app.view_employee')
@@ -107,6 +111,7 @@ def search_employees(request):
     data = paginator.get_page(page_number)
     # Elastic search
     return render(request, "all_employees.html", {"employees": data})
+
 
 @login_required
 @permission_required('main_app.change_employee')
@@ -125,25 +130,54 @@ def employee_update(request, emp_id):
 
 
 def signin(request):
-    if request.method == "GET":
-        form = LoginForm()
-        return render(request, 'login.html', {'form': form})
-    elif request.method == "POST":
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data["username"]
-            password = form.cleaned_data['password']
-            user = authenticate(request, username = username,  password =password)
-            if user:
-                login(request, user)
+    if request.method == "POST":
+        get_email = request.POST.get('email')
+        get_password = request.POST.get('pass1')
+        myuser = authenticate(username=get_email, password=get_password)
+        if myuser is not None:
+            login(request, myuser)
+            messages.success(request, "Login Success")
+            return redirect('/')
+        else:
+            messages.error(request, "Invalid Credentials")
 
-                return redirect('home')
-        messages.error(request, "Wrong username or password")
-        return render(request, "login.html", {"form":form})
+    return render(request, 'login.html')
+
 
 @login_required
 def signout(request):
     logout(request)
     return redirect('home')
 
+
 # TODO add one to one again
+def signup(request):
+    if request.method == "POST":
+        get_first_name = request.POST.get('first')
+        get_last_name = request.POST.get('last')
+        get_email = request.POST.get('email')
+        get_date = request.POST.get('date')
+        get_number = request.POST.get('number')
+        get_address = request.POST.get('address')
+        get_password = request.POST.get('pass1')
+        get_confirm_password = request.POST.get('pass2')
+        if get_password != get_confirm_password:
+            messages.info(request, 'Password not matching')
+        return redirect('/signup')
+
+        try:
+          if user.object.get(email = get_email):
+            messages.warning(request, "Email is already Taken")
+            return redirect('/signup')
+
+        except Exception as identifier:
+             Pass
+
+        myuser = User.objects.create_user(get_first_name, get_last_name , get_date,get_number,get_address ,  get_email, get_email , get_password)
+        myuser.save()
+        messages.success(request, "user created please login")
+        return redirect('signin')
+
+
+
+    return render(request, 'Sign up.html')
