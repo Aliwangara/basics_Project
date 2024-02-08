@@ -11,7 +11,7 @@ from _ast import Pass
 from main_app.app_forms import Employee_form
 from main_app.models import Employee
 from main_app.users import people
-from  django.template import  RequestContext
+from django.template import RequestContext
 
 
 # Create your views here.
@@ -137,7 +137,7 @@ def signin(request):
         if myuser is not None:
             login(request, myuser)
             messages.success(request, "Login Success")
-            return redirect('/')
+            return redirect('home')
         else:
             messages.error(request, "Invalid Credentials")
 
@@ -163,21 +163,20 @@ def signup(request):
         get_confirm_password = request.POST.get('pass2')
         if get_password != get_confirm_password:
             messages.info(request, 'Password not matching')
-        return redirect('/signup')
-
-        try:
-          if user.object.get(email = get_email):
-            messages.warning(request, "Email is already Taken")
             return redirect('/signup')
 
-        except Exception as identifier:
-             Pass
+        try:
+            if User.objects.get(username=get_email):
+                messages.warning(request, "Email is already Taken")
+                return redirect('/signup')
 
-        myuser = User.objects.create_user(get_first_name, get_last_name , get_date,get_number,get_address ,  get_email, get_email , get_password)
+
+        except Exception as identifier:
+            Pass
+
+        myuser = User.objects.create_user(  get_email,get_email, get_password)
         myuser.save()
         messages.success(request, "user created please login")
         return redirect('signin')
-
-
 
     return render(request, 'Sign up.html')

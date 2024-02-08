@@ -1,5 +1,16 @@
 body{
-    background: #ffffff;
+    background-color: #ffffff;
 
 ;
+}
+
+#donate_btn{
+    text-align: center;
+    margin-bottom: 100px;
+    border-left-color: white;
+    border-top-color: #31d2f2;
+    border-right-color: #1a1d20;
+    border-bottom-color: #c5d7f2;
+    background: #6edff6;
+
 }

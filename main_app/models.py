@@ -25,6 +25,9 @@ class Employee(models.Model):
 
 
 
+
+
+
 # pythonmanage.py makemigrations
 # pythonmanage.py migrate
 # pip install pillow

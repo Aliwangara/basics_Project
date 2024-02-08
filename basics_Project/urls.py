@@ -28,9 +28,9 @@ urlpatterns = ([
     path('contact', views.contact, name = "contact"),
     path('team', views.team, name = "team"),
     path('employees', views.employee, name = "all"),
-    path('signin/' ,views.signin, name= 'signin'),
-    path('signup/', views.signup, name= 'signup'),
-    path('signout/', views.signout, name = "signout"),
+    path('signin' ,views.signin, name= 'signin'),
+    path('signup', views.signup, name= 'signup'),
+    path('signout', views.signout, name = "signout"),
     path('search', views.search_employees, name = "search"),
 
     path('employees/<int:emp_id>', views.employee_details, name = "details"),
