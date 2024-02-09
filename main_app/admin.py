@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from main_app.models import Employee
+from main_app.models import Employee, Contacts
 
 # Register your models here.
 admin.site.site_header = "Spreading smiles System"
@@ -14,6 +14,7 @@ class Employeeadmin(admin.ModelAdmin):
 
 
 admin.site.register(Employee, Employeeadmin)
+admin.site.register(Contacts)
 
 
 
