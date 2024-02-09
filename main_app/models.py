@@ -22,6 +22,15 @@ class Employee(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)#once during creation
     updated_at = models.DateTimeField(auto_now=True, null=True)#every time an update happens
 
+class Contacts(models.Model):
+    name = models.CharField(max_length=25)
+    email = models.EmailField(unique=True)
+    number = models.CharField(max_length=20)
+    subject  = models.TextField(max_length=100)
+    details = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 
 
