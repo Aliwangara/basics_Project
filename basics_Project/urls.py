@@ -26,6 +26,7 @@ urlpatterns = ([
     path('about', views.about, name = "about"),
     path('donate', views.donate, name = "donate"),
     path('contact', views.contact, name = "contact"),
+    path('learn', views.learn, name= 'learn'),
     path('team', views.team, name = "team"),
     path('employees', views.employee, name = "all"),
     path('signin' ,views.signin, name= 'signin'),

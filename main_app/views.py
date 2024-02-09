@@ -70,7 +70,7 @@ def team(request):
         if form.is_valid():
             form.save()
             messages.info(request, "Added successfully")
-            return redirect("home")
+            return redirect("all")
 
     else:
         form = Employee_form()
@@ -190,3 +190,7 @@ def signup(request):
         return redirect('signin')
 
     return render(request, 'Sign up.html')
+
+
+def learn(request):
+    return render(request,'Sheikh Khalifa.html')
