@@ -3,83 +3,96 @@
 {% block content %}
 
 
-        <!-- Contact Us Start -->
-        <div class="container-fluid py-5">
-            <div class="container py-5">
-                <div class="bg-light rounded p-5">
-                    <div class="row g-4">
-                        <div class="col-lg-5">
-                            <div class="">
-                                <h1>General Customer Care & Technical Support</h1>
-                                <div class="rounded ">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d958.4642550159488!2d34.4892575890651!3d0.34912299115010303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1707468792785!5m2!1sen!2ske" width="400" height="450" style="border:0;"
-                                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- Contact Us Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="bg-light rounded p-5">
+                <div class="row g-4">
+                    <div class="col-lg-5">
+                        <div class="">
+
+                            {% for message in messages %}
+                                <div class="alert {{ message.tags }} alert-dismissible">
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                    {{ message }}
                                 </div>
+                            {% endfor %}
+                            <h1>General Customer Care & Technical Support</h1>
+                            <div class="rounded ">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d958.4642550159488!2d34.4892575890651!3d0.34912299115010303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1707468792785!5m2!1sen!2ske"
+                                        width="400" height="450" style="border:0;"
+                                        allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
-                        <div class="col-lg-7">
-                            <form action="/contact" method="post"  class="mb-4">
-                                {% csrf_token %}
-                                <div class="row g-4">
-                                    <div class="col-lg-6">
-                                        <input type="text" class="w-100 form-control border-0 py-3" name="name" placeholder="Your Name">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="w-100 form-control border-0 py-3" name="email" placeholder="Enter Your Email" {{ user.username }}>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" class="w-100 form-control border-0 py-3" name="num" placeholder="Enter Your Phone">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" class="w-100 form-control border-0 py-3" name="subject" placeholder="Subject">
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea class="w-100 form-control border-0" rows="6" cols="10" name="desc" placeholder="Your Message"></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <button class="w-100 btn btn-primary form-control py-3" type="submit">Submit Now</button>
-                                    </div>
-                                </div>
-                            </form>
+                    </div>
+                    <div class="col-lg-7">
+                        <form action="/contact" method="post" class="mb-4">
+                            {% csrf_token %}
                             <div class="row g-4">
-                                <div class="col-xl-6">
-                                    <div class="d-flex p-4 rounded bg-white">
-                                        <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
-                                        <div>
-                                            <h4>Address</h4>
-                                            <p class="mb-0">123 Street New York.USA</p>
-                                        </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="w-100 form-control border-0 py-3" name="name"
+                                           placeholder="Your Name">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="email" class="w-100 form-control border-0 py-3" name="email"
+                                           value="{{ user.username }} ">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="w-100 form-control border-0 py-3" name="num"
+                                           placeholder="Enter Your Phone">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="w-100 form-control border-0 py-3" name="subject"
+                                           placeholder="Subject">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="w-100 form-control border-0" rows="6" cols="10" name="desc"
+                                              placeholder="Your Message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="w-100 btn btn-primary form-control py-3" type="submit">Submit Now
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row g-4">
+                            <div class="col-xl-6">
+                                <div class="d-flex p-4 rounded bg-white">
+                                    <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
+                                    <div>
+                                        <h4>Address</h4>
+                                        <p class="mb-0">Mumias, KAKAMEGA.KENYA</p>
                                     </div>
                                 </div>
-                                <div class="col-xl-6">
-                                    <div class="d-flex p-4 rounded bg-white">
-                                        <i class="fas fa-envelope fa-2x text-primary me-4"></i>
-                                        <div>
-                                            <h4>Mail Us</h4>
-                                            <p class="mb-0">info@example.com</p>
-                                        </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="d-flex p-4 rounded bg-white">
+                                    <i class="fas fa-envelope fa-2x text-primary me-4"></i>
+                                    <div>
+                                        <h4>Mail Us</h4>
+                                        <p class="mb-0">sp.reading smiles@gmail.com</p>
                                     </div>
                                 </div>
-                                <div class="col-xl-6">
-                                    <div class="d-flex p-4 rounded bg-white">
-                                        <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
-                                        <div>
-                                            <h4>Telephone</h4>
-                                            <p class="mb-0">(+012) 3456 7890</p>
-                                        </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="d-flex p-4 rounded bg-white">
+                                    <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
+                                    <div>
+                                        <h4>Telephone</h4>
+                                        <p class="mb-0">(+254) 7113712264</p>
                                     </div>
                                 </div>
-                                <div class="col-xl-6">
-                                    <div class="d-flex p-4 rounded bg-white">
-                                        <i class="fa fa-share-alt fa-2x text-primary me-4"></i>
-                                        <div>
-                                            <h4>Share</h4>
-                                            <div class="d-flex">
-                                                <a class="me-3" href=""><i class="fab fa-twitter text-dark link-hover"></i></a>
-                                                <a class="me-3" href=""><i class="fab fa-facebook-f text-dark link-hover"></i></a>
-                                                <a class="me-3" href=""><i class="fab fa-youtube text-dark link-hover"></i></a>
-                                                <a class="" href=""><i class="fab fa-linkedin-in text-dark link-hover"></i></a>
-                                            </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="d-flex p-4 rounded bg-white">
+                                    <i class="fa fa-share-alt fa-2x text-primary me-4"></i>
+                                    <div>
+                                        <h4>Share</h4>
+                                        <div class="d-flex">
+                                            <i class="fa-brands fa-twitter  w-25 me-3"></i>
+                                            <i class="fa-brands fa-square-instagram w-25 me-3"></i>
+                                            <i class="fa-brands fa-facebook w-25 me-3"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -89,19 +102,22 @@
                 </div>
             </div>
         </div>
-        <!-- Contact Us End -->
+    </div>
+    <!-- Contact Us End -->
+
+    <script src="{% static 'main_assets/js/main_2.js' %}"></script>
+
+    <script src="https://kit.fontawesome.com/2256adb598.js" crossorigin="anonymous"></script>
 {% endblock %}
 
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-        <!-- Template Javascript -->
-        <script src="{% static 'main_assets/js/main_2.js' %}"></script>
-    </body>
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-</html>
+<!-- Template Javascript -->
+
+
