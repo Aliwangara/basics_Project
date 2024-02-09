@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'main_app.apps.MainAppConfig',
     "crispy_forms",
     "crispy_bootstrap5",
-    "django.contrib.humanize"
+    "django.contrib.humanize",
+    "paypal.standard.ipn",
 ]
 
 MIDDLEWARE = [
@@ -153,3 +154,6 @@ MESSAGE_TAGS = {
     messages.WARNING : "alert-warning",
 }
 LOGIN_URL = "/signin"
+
+PAYPAL_RECEIVER_EMAIL = 'mrkhamis867@gmail.com'
+PAYPAL_TEST = True
