@@ -9,7 +9,7 @@ from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from _ast import Pass
 from main_app.app_forms import Employee_form
-from main_app.models import Employee
+from main_app.models import Employee, Contacts
 from main_app.users import people
 from django.template import RequestContext
 
@@ -49,6 +49,16 @@ def donate(request):
 
 
 def contact(request):
+    if request.method=="POST":
+        fname =request.POST.get('name')
+        femail = request.POST.get('email')
+        fphoneno = request.POST.get('num')
+        fsubj = request.POST.get('subject')
+        fdescription = request.POST.get('desc')
+        query = Contacts(name =fname, email=femail, number=fphoneno, subject=fsubj, details=fdescription)
+        query.save()
+        messages.success(request, "Thanks for contacting. I will get back to you soon!")
+        return redirect('/contact')
     return render(request, "contact.html")
 
 
