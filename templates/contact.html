@@ -10,32 +10,31 @@
                     <div class="row g-4">
                         <div class="col-lg-5">
                             <div class="">
-                                <h1 class="mb-4">General Customer Care & Technical Support</h1>
-                                <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                                <div class="rounded">
-                                    <iframe class="rounded w-100" 
-                                    style="height: 425px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd" 
-                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <h1>General Customer Care & Technical Support</h1>
+                                <div class="rounded ">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d958.4642550159488!2d34.4892575890651!3d0.34912299115010303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1707468792785!5m2!1sen!2ske" width="400" height="450" style="border:0;"
+                                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-7">
-                            <form action="" class="mb-4">
+                            <form action="/contact" method="post"  class="mb-4">
+                                {% csrf_token %}
                                 <div class="row g-4">
                                     <div class="col-lg-6">
                                         <input type="text" class="w-100 form-control border-0 py-3" name="name" placeholder="Your Name">
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="email" class="w-100 form-control border-0 py-3" name="email" placeholder="Enter Your Email">
+                                        <input type="email" class="w-100 form-control border-0 py-3" name="email" placeholder="Enter Your Email" {{ user.username }}>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" class="w-100 form-control border-0 py-3" name="phone" placeholder="Enter Your Phone">
+                                        <input type="text" class="w-100 form-control border-0 py-3" name="num" placeholder="Enter Your Phone">
                                     </div>
                                     <div class="col-lg-6">
                                         <input type="text" class="w-100 form-control border-0 py-3" name="subject" placeholder="Subject">
                                     </div>
                                     <div class="col-12">
-                                        <textarea class="w-100 form-control border-0" rows="6" cols="10" placeholder="Your Message"></textarea>
+                                        <textarea class="w-100 form-control border-0" rows="6" cols="10" name="desc" placeholder="Your Message"></textarea>
                                     </div>
                                     <div class="col-12">
                                         <button class="w-100 btn btn-primary form-control py-3" type="submit">Submit Now</button>
